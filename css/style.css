@@ -1,33 +1,46 @@
-body{
+* {
+  box-sizing: border-box;
+}
+
+body {
   font-family: Arial;
+  margin: 0;
+  height: 100%;
 }
 
-/*Page layout*/
-.page-grid-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-column-gap: 5px;
+/*Navigation bar*/
+#navBar {
+  list-style-type: none;
+  margin:0;
+  padding: 0;
+  overflow: hidden;
+  background-color: lightblue;
 }
 
-/*Page Header*/
-#welcome-section {
-  grid-column: 1 / span 6;
+.navBarItem{
+  float: right;
+}
+
+.navBarItem a {
+  display: block;
   text-align: center;
+  padding: 10px 10px;
 }
 
-/*Description*/
-.description {
-  grid-column: 2/ span 3;
-  background-color: #B2D732;
-  color: #F4FBDA;
-  padding-left: 10px;
-  border: 2px solid red;
-  border-radius: 5px;
-  margin-bottom: 10px;
+/*Welcome section*/
+#welcome-section {
+  height: 100%;
+  text-align: center;
+  color: #ECF7EB;
+  background-color: #252624;
 }
 
-/*Projects*/
-.projects {
-  grid-column: 1 / span 5;
-  background-color: lightpink;
+#welcome-section h1 {
+  margin: 0;
+  padding: 20px;
+  font-size: 50px;
+}
+
+#welcome-section p {
+  font-size: 30px;
 }
