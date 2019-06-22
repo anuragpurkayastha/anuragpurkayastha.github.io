@@ -1,3 +1,33 @@
-body {
-    background-color: lightblue;
-  }
+body{
+  font-family: Arial;
+}
+
+/*Page layout*/
+.page-grid-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-column-gap: 5px;
+}
+
+/*Page Header*/
+#welcome-section {
+  grid-column: 1 / span 6;
+  text-align: center;
+}
+
+/*Description*/
+.description {
+  grid-column: 2/ span 3;
+  background-color: #B2D732;
+  color: #F4FBDA;
+  padding-left: 10px;
+  border: 2px solid red;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+/*Projects*/
+.projects {
+  grid-column: 1 / span 5;
+  background-color: lightpink;
+}
