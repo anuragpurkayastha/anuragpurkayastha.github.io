@@ -2,45 +2,74 @@
   box-sizing: border-box;
 }
 
+@font-face {
+	font-family: 'Open Sans';
+	src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
+}
+
 body {
-  font-family: Arial;
+  display: flex;
+  flex-flow: column;
+  font-family: 'Open Sans';
   margin: 0;
   height: 100%;
 }
 
-/*Navigation bar*/
+/*================================================*/
+/*  Navigation bar*/
+/*================================================*/
 #navBar {
-  list-style-type: none;
-  margin:0;
-  padding: 0;
+  position: sticky;
+  top: 0;
   overflow: hidden;
-  background-color: lightblue;
+  background-color: #CF004E;;
 }
 
-.navBarItem{
+#navBar ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+/*		Navigation links	*/
+.navBarItem {
   float: right;
+  font-size: 20px;
 }
 
 .navBarItem a {
   display: block;
+  color: #ECF7EB;
+  text-decoration: none;
   text-align: center;
-  padding: 10px 10px;
+  padding: 17px 16px;
 }
 
-/*Welcome section*/
+.navBarItem a:hover {
+	background-color: #248CFF;
+}
+
+/*================================================*/
+/*	Welcome section*/
+/*================================================*/
 #welcome-section {
-  height: 100%;
+  height: 100vh;
   text-align: center;
   color: #ECF7EB;
   background-color: #252624;
+  padding: 10%;
 }
 
 #welcome-section h1 {
   margin: 0;
-  padding: 20px;
-  font-size: 50px;
+  font-size: 4.5vw;
 }
 
 #welcome-section p {
-  font-size: 30px;
+  font-size: 2vw;
+}
+/*================================================*/
+/*	Projects section*/
+/*================================================*/
+#projects-section {
+	height: 100vh;
 }
