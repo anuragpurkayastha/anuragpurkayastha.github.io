@@ -7,6 +7,9 @@
 	src: url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 }
 
+/*=============================================================================*/
+/*                          HOMEPAGE                                          */
+/*=============================================================================*/
 body {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -124,4 +127,42 @@ body {
   text-decoration: none;
   color: #E3E1DA;
   margin-bottom: 10px;
+}
+
+/*=============================================================================*/
+/*                          TRIBUTE PAGE                                       */
+/*=============================================================================*/
+
+/*================================================*/
+/*  Tribute page Body*/
+/*================================================*/
+#main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #E6E6E6;
+  margin-top: 50px;
+}
+
+#main h1 {
+  font-size: 3em;
+}
+
+#image-div {
+  height: 623px;
+  width:1024px;
+  background-color: white;
+  margin-top: 35px;
+}
+
+#tribute-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  width: 500px;
+}
+
+#tribute-info h3 {
+  text-align: center;
+  font-size: 1.5em;
 }
