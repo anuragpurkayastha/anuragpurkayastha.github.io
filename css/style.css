@@ -8,11 +8,16 @@
 }
 
 body {
-  display: flex;
-  flex-flow: column;
-  font-family: 'Open Sans';
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas:
+  'navigation navigation navigation'
+  ' welcomesection welcomesection welcomesection'
+  'projects projects projects';
   margin: 0;
-  height: 100%;
+  font-family: 'Open Sans';
+  font-size: 100%;
 }
 
 /*================================================*/
@@ -21,8 +26,8 @@ body {
 #navBar {
   position: sticky;
   top: 0;
-  overflow: hidden;
-  background-color: #CF004E;;
+  grid-area: navigation;
+  background-color: #CF004E;
 }
 
 #navBar ul {
@@ -33,7 +38,7 @@ body {
 /*		Navigation links	*/
 .navBarItem {
   float: right;
-  font-size: 20px;
+  font-size: 1.4em;
 }
 
 .navBarItem a {
@@ -45,31 +50,78 @@ body {
 }
 
 .navBarItem a:hover {
-	background-color: #248CFF;
+	background-color: #1F00B0;
+  font-weight: 900;
 }
 
 /*================================================*/
 /*	Welcome section*/
 /*================================================*/
 #welcome-section {
-  height: 100vh;
+  grid-area: welcomesection;
   text-align: center;
-  color: #ECF7EB;
-  background-color: #252624;
+  background-color: black;
   padding: 10%;
+  height: 100vh;
 }
 
 #welcome-section h1 {
   margin: 0;
   font-size: 4.5vw;
+  color: #E3E1DA;
 }
 
 #welcome-section p {
   font-size: 2vw;
+  color: #A30B1D;
+}
+
+#welcome-section a {
+  color: #D60F26;
+  font-style: italic;
 }
 /*================================================*/
 /*	Projects section*/
 /*================================================*/
-#projects-section {
-	height: 100vh;
+#projects {
+  grid-area: projects;
+  display: grid;
+  grid-template-rows: 1fr repeat(2 , 400px);
+  grid-template-columns: repeat(2 , 1fr);
+  grid-template-areas:
+    'projectsHeader projectsHeader'
+    'projectTile1 projectTile2'
+    'projectTile3 projectTile4';
+  background-color: #1C2750;
+}
+
+  /* PROJECTS HEADER */
+#projects h2 {
+  grid-area: projectsHeader;
+  font-size: 4vw;
+  text-align: center;
+  text-decoration: underline;
+  color: #E3E1DA;
+  padding-top: 50px;
+}
+
+  /* Project Tiles */
+.project-tile {
+  display: flex;
+  flex-flow: column;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  background: #211B1C;
+  color: #E3E1DA;
+  font-size: 1.5em;
+  text-decoration: underline;
+  font-weight: 800;
+  margin:10px;
+}
+
+.project-tile a {
+  text-decoration: none;
+  color: #E3E1DA;
+  margin-bottom: 10px;
 }
