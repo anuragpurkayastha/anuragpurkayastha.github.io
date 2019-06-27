@@ -141,6 +141,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #333038;
   background-color: #E6E6E6;
   margin-top: 50px;
 }
@@ -150,9 +151,23 @@ body {
 }
 
 #image-div {
-  height: 700px;
-  width:1300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1240px;
   background-color: white;
+}
+
+#image-div p {
+	text-align: center;
+}
+
+#image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width:95%;
+	height: auto;
 }
 
 #tribute-info {
@@ -160,11 +175,28 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
-  width: 500px;
+  width: 600px;
 }
 
 #tribute-info h3 {
   font-size: 1.5em;
+}
+
+#tribute-info li {
+	padding-bottom: 1.5em;
+}
+
+#tribute-info ul {
+	margin-bottom: 2em;
+}
+
+#tribute-info blockquote p {
+	font-weight: 500;
+}
+
+#tribute-info blockquote {
+	font-style: italic;
+	margin-bottom: 3em;
 }
 
 #tribute-info p {
