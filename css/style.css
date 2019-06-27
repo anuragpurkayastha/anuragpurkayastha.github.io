@@ -131,9 +131,9 @@ body {
 }
 
 .project-tile #project-tile-1-image {
-	width: 70%;
+	width: 80%;
 	display: block;
-	margin: 10px auto 30px auto;
+	margin: auto auto;
 }
 /*=============================================================================*/
 /*                          TRIBUTE PAGE                                       */
