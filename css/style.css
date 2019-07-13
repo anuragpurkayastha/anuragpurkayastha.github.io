@@ -242,6 +242,18 @@ blockquote {
   padding: 20px 10px 10px 10px;
 }
 
-#formArea p {
+#description {
   text-align: center;
+}
+
+#form {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+}
+
+#form input{
+	width: 300px;
+	padding: 5px 15px;
+	margin-bottom: 20px;
 }
