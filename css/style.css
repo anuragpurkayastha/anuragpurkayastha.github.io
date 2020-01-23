@@ -11,16 +11,11 @@
 /*                          HOMEPAGE                                          */
 /*=============================================================================*/
 body {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto auto;
-  grid-template-areas:
-  'navigation navigation navigation'
-  ' welcomesection welcomesection welcomesection'
-  'projects projects projects';
   margin: 0;
   font-family: 'Open Sans';
   font-size: 100%;
+  background-color: #45678a;
+  color: white;
 }
 
 /*================================================*/
@@ -29,8 +24,9 @@ body {
 #navBar {
   position: sticky;
   top: 0;
-  grid-area: navigation;
   background-color: #CF004E;
+  width: 100%;
+  height: 67px;
 }
 
 #navBar ul {
@@ -61,9 +57,8 @@ body {
 /*	Welcome section*/
 /*================================================*/
 #welcome-section {
-  grid-area: welcomesection;
   text-align: center;
-  background-color: black;
+  background-color: #1a1b1c;
   height: 100vh;
 }
 
@@ -88,54 +83,60 @@ body {
 /*	Projects section*/
 /*================================================*/
 #projects {
-  grid-area: projects;
-  display: grid;
-  grid-template-rows: 1fr repeat(2 , 400px);
-  grid-template-columns: repeat(2 , 1fr);
-  grid-template-areas:
-    'projectsHeader projectsHeader'
-    'projectTile1 projectTile2'
-    'projectTile3 projectTile4';
-  background-color: #1C2750;
+	background-color: #45678a;
+	padding-top: 50px;
+	text-align: center;
+}
+
+#projects p {
+	color: white;
+	font-size: 1.5em;
+	font-style: italic;
 }
 
   /* PROJECTS HEADER */
 #projects h2 {
-  grid-area: projectsHeader;
   font-size: 4vw;
   text-align: center;
   text-decoration: underline;
   color: #E3E1DA;
-  padding-top: 50px;
+  padding-top: 0px;
   margin-bottom: 20px;
 }
 
   /* Project Tiles */
-.project-tile {
+.project-section {
   display: flex;
   flex-flow: column;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  align-items: center;
-  background-color: #211B1C;
-  color: #E3E1DA;
-  font-size: 1.5em;
+  margin: 0px 20px 0px 20px;
+  padding: 20px 0px 20px 0px;
+  border-top: 10px double white;
+}
+
+.project-section p {
+	text-align:left;
+	font-style: normal;
+}
+
+.project-section h3{
+	text-decoration: underline;
+	font-weight: 400;
+	font-size: 2.5em;
+	color: white;
+	text-align: left;
+	margin-top: 20px;
+	margin-bottom: 0px;
+}
+
+.project-section a {
   text-decoration: underline;
-  font-weight: 800;
-  margin: 10px;
+  font-size: 200%;
 }
 
-.project-tile a {
-  text-decoration: none;
-  color: #E3E1DA;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-.project-tile #project-tile-1-image {
-	width: 80%;
+.project-section img{
+	width: 500px;
 	display: block;
-	margin: 0px auto;
+	margin: 0px auto 10px auto;
 }
 /*=============================================================================*/
 /*                          TRIBUTE PAGE                                       */
@@ -148,13 +149,19 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #333038;
-  background-color: #E6E6E6;
 }
 
 #main h1 {
   margin-top: 50px;
   font-size: 3.5em;
+}
+
+#main a {
+	font-size: 100%;
+}
+
+#main p {
+	color: white;
 }
 
 #image-div {
@@ -195,6 +202,7 @@ body {
 
 blockquote p {
 	font-weight: 500;
+	color: inherit;
 }
 
 blockquote {
@@ -203,57 +211,96 @@ blockquote {
 	max-width: 700px;
 }
 
-#tribute-info p {
-	text-align: center;
-	font-weight: 600;
-	width: 700px;
+#tribute-page-footer {
+	margin: 30px auto 20px auto;
+	font-size: 70%;
 }
 
-#footer {
-	margin-top: 30px;
-	font-size: 0.8em;
-}
-
-/*================================================*/
-/*  MEDIA QUERIES
-/*================================================*/
-@media screen and (max-width: 480px){
-  #image-div {
-    width: 95vw;
-  }
-}
 /*=============================================================================*/
 /*                          SURVEY FORM                                       */
 /*=============================================================================*/
 #surveyFormBody {
-  color: #2F2B30;
-  background-color: #B8DDEB;
+  color: #edeef5;
+  background-color: #141b5c;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
+#survey-title{
+	font-size: 50px;
+	margin-bottom: 10px;
+	font-weight: 200;
+}
+
 #formArea {
-  background-color: white;
+  background-color: #c8cefa;
   display: flex;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 20px auto 10px; auto;
   width: 900px;
   padding: 20px 10px 10px 10px;
+  border-radius: 10px;
 }
 
-#description {
+#survey-description, #go-back-description, a{
   text-align: center;
+  font-style:italic;
+  font-size: 24px;
+  color: #edeef5;
 }
 
-#form {
+#survey-form {
+	width: 800px;
+	clear: both;
 	display: flex;
-	justify-content: center;
-	width: 100%;
+	flex-direction: column;
+	margin: 0 auto;
 }
 
-#form input{
-	width: 300px;
-	padding: 5px 15px;
-	margin-bottom: 20px;
+.inputfield{
+	width: 100%;
+	margin: 8px 0px 16px 0px;
+	padding: 10px 20px;
+	border: 1px solid lightgrey;
+	border-radius: 5px;
+	font-size:18px;
+}
+
+input:invalid{
+	border: 4px solid red;
+}
+
+label, p, textarea, input[type="submit"]{
+	color: #2f2f30;
+	font-size:20px;
+}
+
+label{
+	font-weight: bold;
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+
+#dropdown{
+	width:100%;
+	color: grey;
+}
+
+input[type="radio"],input[type="checkbox"]{
+	margin-right: 10px;
+}
+
+input[type="submit"]{
+	background-color: #4ba118;
+	border: 0 none;
+	border-radius: 5px;
+	color: white;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-top: 20px;
+}
+
+a{
+	font-style: normal;	
 }
