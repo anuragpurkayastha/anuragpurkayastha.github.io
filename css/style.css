@@ -315,7 +315,7 @@ input[type="submit"]{
 }
 
 a{
-	font-style: normal;	
+	font-style: normal;
 }
 
 /*=============================================================================*/
@@ -351,13 +351,13 @@ h1{
 }
 
 #colourValue{
-    margin: 0 auto;
+    margin: 0 auto 20px auto;
     text-align: center;
 }
 
-#answer{
-    margin: 0 auto;
-    text-align: center;
+#answerMessage {
+  margin: 0 auto;
+  text-align: center;
 }
 
 #reset{
