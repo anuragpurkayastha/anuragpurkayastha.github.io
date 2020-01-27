@@ -48,7 +48,9 @@ function makeRandomColour() {
 --------------------------------------------------------*/
 function startGame(){
 
+	// Initialize the display of the page.
 	answerMessage.innerHTML = "";	//	Clear the answer message
+	
 	var answerButtonIndex = Math.round(Math.random() * (buttons.length - 1));	//Index of the randomly selected "correct" answer button.
 
 	console.log("Answer button index:" + answerButtonIndex);
@@ -74,5 +76,6 @@ function startGame(){
 		});
 	}
 }
+
 startGame();	//	Start the game
 document.getElementById("resetButton").addEventListener('click',startGame);	//	If the reset button is pressed, reset the game.
