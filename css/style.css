@@ -10,22 +10,18 @@
 /*=============================================================================*/
 /*                          HOMEPAGE                                          */
 /*=============================================================================*/
-html {
-  background-color: #dce0e6;
-}
-
 body {
   margin: 0;
   font-family: 'Open Sans';
   font-size: 100%;
-  background-color: inherit;
+  background-color: #dce0e6;
   color: #1c1c1b;
   text-align: center;
 }
 
 a {
   text-decoration: underline;
-  font-size: 100%;
+  font-size: inherit;
   font-style: inherit;
   color: inherit;
 }
@@ -381,6 +377,7 @@ input[type="submit"]{
 	border-radius: 10px;
 	margin: 0px auto 20px auto;
 	padding-left: 10px;
+	text-align: left;
 }
 
 ol li{
@@ -390,16 +387,29 @@ ol li{
 /*=============================================================================*/
 /*                          Drumkit		                                       */
 /*=============================================================================*/
+.drumkitBody {
+	background-size: cover;
+	background: url(https://pixabay.com/get/52e7dc424b5bae14f6d1867dda6d49214b6ac3e45659714a71287adc94/snare-drum-4791192_1920.jpg);
+	background-color: #dce0e6;
+}
+
+#drumkit-heading {
+	color: white;
+}
+
 #drumkit-description-box{
-	border: .4rem double black;
+	border: .4rem double white;
 	border-radius: .5rem;
 	margin: 20px 200px;
-	padding: 10px 20px;
+	padding: 5px 20px;
+	color: white;
+	background-color: rgba(0,0,0,0.6);
 }
 
 .drumkit-description {
 	text-align: left;
 	font-size: 1.5rem;
+	margin: 0;
 }
 
 .keys {
@@ -407,6 +417,7 @@ ol li{
   flex: 1;
   align-items: center;
   justify-content: center;
+  margin-bottom: 100px;
 }
 
 .key {
@@ -415,11 +426,11 @@ ol li{
   margin: 1rem;
   font-size: 1.5rem;
   padding: 1rem .5rem;
-  transition: all .07s ease;
+  transition: all .1s ease;
   width: 10rem;
   text-align: center;
   color: white;
-  background: rgba(0,0,0,0.4);
+  background: rgba(0,0,0,0.8);
   text-shadow: 0 0 .5rem black;
 }
 
@@ -439,4 +450,9 @@ kbd {
   text-transform: uppercase;
   letter-spacing: .1rem;
   color: #ffc600;
+}
+
+.drumkit-go-homeLink	{
+	color: white;
+	font-size: 2.5rem;
 }

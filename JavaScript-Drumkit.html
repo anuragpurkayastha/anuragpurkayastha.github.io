@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html id="drumkit-page" lang="en">
+<html lang="en">
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -7,14 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Javascript Drumkit</title>
 </head>
-	<body>
+	<body class="drumkitBody">
 
-	  <h1>A Drumkit!</h1>
+	  <h1 id="drumkit-heading">A Drumkit!</h1>
 	  
 	  <div id="drumkit-description-box">
 		<p class="drumkit-description">Instructions: press a key to play the corresponding sound!</p>
 		
-		<p class="drumkit-description">This is a drumkit adapted from <a href="https://javascript30.com/" target="_blank">https://javascript30.com/</a>.</p>
+		<footer>This is adapted from <a href="https://javascript30.com/" target="_blank">https://javascript30.com/</a>.</footer>
 		
 	  </div>
 	  
@@ -55,6 +55,10 @@
 		  <kbd>L</kbd>
 		  <span class="sound">tink</span>
 		</div>
+	  </div>
+	  
+	  <div class="drumkit-go-homeLink">
+		<a href="index.html">Home</a>
 	  </div>
 
 	  <audio data-key="65" src="sounds/clap.wav"></audio>
