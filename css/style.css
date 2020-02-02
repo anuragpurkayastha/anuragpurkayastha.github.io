@@ -130,8 +130,8 @@ h1 {
 }
 
 .project-section img{
-	max-width: 70%;
-  max-height: 70%;
+	max-width: 50%;
+  max-height: 50%;
 	display: block;
 	margin: 0px auto 10px auto;
 }
@@ -307,6 +307,18 @@ input[type="submit"]{
 /*=============================================================================*/
 /*                          GUESS THE COLOUR GAME                              */
 /*=============================================================================*/
+.game-container {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(12, 13, 12,0.98);
+  align-items: center;
+  color: white;
+}
+
 .guessTheColourBody {
   background: url(https://pixabay.com/get/53e5d3424a56b108feda8460825668204022dfe05b51774a71277dd2/question-556104_1920.jpg) bottom center;
   background-size: contain;
@@ -331,7 +343,7 @@ input[type="submit"]{
     margin: 0 auto;
     border: 3px solid white;
 	  border-radius: 10px;
-    background-color: rgba(0,0,0,0.95);
+    background-color: rgba(0,0,0,0.8);
 }
 
 #colourValue{
@@ -357,12 +369,8 @@ input[type="submit"]{
 
 .gameTextBox {
 	width: 80%;
-	border: 3px solid white;
-	border-radius: 10px;
-	margin: 0px auto 20px auto;
 	padding-left: 10px;
 	text-align: left;
-  background: rgba(0,0,0,0.95);
   font-size: 1.4rem;
   color: white;
 }
