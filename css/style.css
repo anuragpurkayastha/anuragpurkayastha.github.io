@@ -104,21 +104,25 @@ h1 {
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 5px;
   grid-row-gap: 5px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .project-section {
+  display: flex;
+  flex:1;
+  flex-direction: column;
   border: 2px solid black;
   border-radius: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .project-section p {
 	text-align:left;
 	font-style: normal;
 	font-size: 100%;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
 }
 
 .project-section h3{
@@ -140,7 +144,6 @@ h1 {
   font-size: 1.6rem;
 	color: #1c1c1b;
 	font-style: normal;
-  margin-top: auto;
   margin-bottom: 10px;
 }
 /*=============================================================================*/
@@ -388,7 +391,7 @@ ol li{
 /*=============================================================================*/
 .drumkitBody {
 	background-size: cover;
-	background: url(https://pixabay.com/get/52e7dc424b5bae14f6d1867dda6d49214b6ac3e45659714a71287adc94/snare-drum-4791192_1920.jpg);
+	background-image: url('./img/drumkit.jpg') bottom center;
 	background-color: #dce0e6;
 }
 
