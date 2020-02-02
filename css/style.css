@@ -10,10 +10,13 @@
 /*=============================================================================*/
 /*                          HOMEPAGE                                          */
 /*=============================================================================*/
+html {
+  font-size: 100%;
+}
+
 body {
   margin: 0;
   font-family: 'Open Sans';
-  font-size: 100%;
   background-color: #dce0e6;
   color: #1c1c1b;
   text-align: center;
@@ -42,13 +45,13 @@ footer {
 h1 {
   font-size: 400%;
   text-align: center;
-  text-decoration: underline;
+  text-decoration: none;
   padding-top: 0px;
   margin-bottom: 20px;
 }
 
 .homepage-link {
-	font-size: 1.5em;
+	font-size: 1.7rem;
 	font-style: normal;
 }
 
@@ -88,49 +91,57 @@ h1 {
 /*================================================*/
 /*	Projects section*/
 /*================================================*/
-#projects {
-	padding-top: 50px;
-	text-align: center;
+.projects h1  {
+  text-decoration: none;
 }
 
-#projects p {
-	font-size: 1.5em;
-	font-style: italic;
+.projects p {
+  font-size: 1.6rem;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .project-section {
-  display: flex;
-  flex-flow: column;
-  margin: 0px 20px 0px 20px;
-  padding: 20px 0px 20px 0px;
-  border-top: 10px double black;
+  border: 2px solid black;
+  border-radius: 10px;
 }
 
 .project-section p {
 	text-align:left;
 	font-style: normal;
 	font-size: 100%;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .project-section h3{
 	text-decoration: underline;
 	font-weight: 400;
-	font-size: 2.5em;
+	font-size: 2rem;
 	text-align: left;
-	margin-top: 20px;
-	margin-bottom: 0px;
+  margin: 0.3rem auto 0.5rem 0.5rem;
 }
 
 .project-section img{
-	width: 50%;
+	max-width: 70%;
+  max-height: 70%;
 	display: block;
 	margin: 0px auto 10px auto;
 }
 
 .project-link {
-	font-size: 200%;
+  font-size: 1.6rem;
 	color: #1c1c1b;
 	font-style: normal;
+  margin-top: auto;
+  margin-bottom: 10px;
 }
 /*=============================================================================*/
 /*                          TRIBUTE PAGE                                       */
@@ -296,29 +307,31 @@ input[type="submit"]{
 /*=============================================================================*/
 /*                          GUESS THE COLOUR GAME                              */
 /*=============================================================================*/
-.guessTheColorDesc {
-	font-size: 20px;
+.guessTheColourBody {
+  background: url(https://pixabay.com/get/53e5d3424a56b108feda8460825668204022dfe05b51774a71277dd2/question-556104_1920.jpg) bottom center;
+  background-size: contain;
+  background-color: lightgrey;
 }
 
 .colourButton{
     background-color: rgb(255,0,0);
-    width: 50px;
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border: none;
     border-radius: 50%;
     box-shadow: none;
     margin: 10px;
 }
 
-#buttonWrapper{
+.buttonWrapper{
     width: 80%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 0 auto;
-    border: 2px solid black;
-	border-radius: 10px;
-    background-color: lightgrey;
+    border: 3px solid white;
+	  border-radius: 10px;
+    background-color: rgba(0,0,0,0.95);
 }
 
 #colourValue{
@@ -342,13 +355,20 @@ input[type="submit"]{
     border: 1px solid #000;
 }
 
-#gameDescriptionBox {
+.gameTextBox {
 	width: 80%;
 	border: 3px solid white;
 	border-radius: 10px;
 	margin: 0px auto 20px auto;
 	padding-left: 10px;
 	text-align: left;
+  background: rgba(0,0,0,0.95);
+  font-size: 1.4rem;
+  color: white;
+}
+
+.rgbValue {
+  text-align: center;
 }
 
 ol li{

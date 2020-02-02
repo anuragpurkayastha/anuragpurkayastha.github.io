@@ -6,29 +6,29 @@
     <title>Guess The Colour Game</title>
 </head>
 
-<body>
+<body class="guessTheColourBody">
     <h1>Guess the colour!</h1>
 
-	<div id="gameDescriptionBox">
-		<p class="guessTheColorDesc">In this game, you will try to guess the colour given by the (r,g,b) code.</p>
+	<div class="gameTextBox">
+		<p>In this game, you will try to guess the colour given by the (r,g,b) code.</p>
 
-		<p class="guessTheColorDesc">Instructions are as follows:</p>
+		<p>Instructions are as follows:</p>
 
 		<ol>
 			<li>A set of RGB values will be displayed.</li>
 			<li>Six different colours will be displayed.</li>
 			<li>You must guess which of the 6 colours matches the given RGB value.</li>
 		</ol>
-		
-		<p><u>Note</u>: there is a bug where the last clicked "correct" button is remembered from the previous game, into subsequent games.</p>
 	</div>
 
-	<h2>The rgb value of the correct button is:</h2>
-	<h2 id="colourValue"></h2>
+  <div class="gameTextBox rgbValue">
+  	<h4>The rgb value of the correct button is:</h4>
+  	<h4 id="colourValue"></h4>
+  </div>
 
   <h2 id="answerMessage"></h2>
 
-    <div id="buttonWrapper">
+    <div class="buttonWrapper">
         <button class="colourButton"></button>
         <button class="colourButton"></button>
         <button class="colourButton"></button>
@@ -38,7 +38,7 @@
     </div>
 
     <div id="reset"><button id="resetButton">Reset game</button></div>
-	
+
 	<a class="homepage-link" href="index.html">Home</a>
 
 	<footer>Adapted from <a style="font-size:inherit;" href="https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi" target="_blank">https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi</a></footer>
