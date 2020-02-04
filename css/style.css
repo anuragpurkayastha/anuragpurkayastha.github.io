@@ -484,11 +484,33 @@ kbd {
 .hand {
 	width: 50%;
 	height: 6px;
-	background: black;
+  background: black;
 	position: absolute;
 	top: 50%;
 	transform-origin: 100%;
 	transform: rotate(90deg);
 	transition: all 0.05s;
 	transition-timing-function: cubic-bezier(.28,1.79,.75,.83);
+}
+
+.second-hand  {
+  background: red;
+  height: 2px;
+  transform: translateY(-1px);
+}
+
+.min-hand {
+  width: 30%;
+  left: 20%;
+}
+
+.center-circle  {
+  width: 15px;
+  height: 15px;
+  background: grey;
+  border: 1px solid black;
+  border-radius: 50%;
+  position: absolute;
+  top: 47%;
+  left: 47%;
 }
