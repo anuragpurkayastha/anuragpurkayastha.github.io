@@ -515,3 +515,52 @@ kbd {
   top: 47%;
   left: 47%;
 }
+
+/*=============================================================================*/
+/*                          Javascript Calculator                              */
+/*=============================================================================*/
+.javascriptCalculatorBody	{
+	background: lightgrey;
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+}
+
+.calculator	{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(6,100px);
+	grid-template-areas:
+		"display	display		display		display"
+		"keyPlus	keyMinus	keyMultiply	keyDivide"
+		"key7		key8		key9		keyEquals"
+		"key4		key5		key6		keyEquals"
+		"key1		key2		key3		keyEquals"
+		"key0		keyDecimal	keyClear	keyEquals";
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.calculatorDisplay	{
+	grid-area: display;
+	background: black;
+}
+
+.calculatorKey	{
+	text-align: center;
+	background: blue;
+	border: 1px solid black;
+}
+
+.plusKey	{
+	grid-area: keyPlus;
+}
+
+.minusKey	{
+	grid-area: keyMinus;
+}
+
+.divideKey	{
+	grid-area: keyEquals;
+}

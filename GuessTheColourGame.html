@@ -1,48 +1,51 @@
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guess The Colour Game</title>
-</head>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Guess The Colour Game</title>
+	</head>
 
-<body class="guessTheColourBody">
-  <div class="game-container">
-    <h1>Guess the colour!</h1>
+	<body class="guessTheColourBody">
+	  <div class="game-container">
+		<h1>Guess the colour!</h1>
 
-  	<div class="gameTextBox">
-  		<p>In this game, you will try to guess the colour given by the (r,g,b) code.</p>
+		<div class="gameTextBox">
+			<p>In this game, you will try to guess the colour given by the (r,g,b) code.</p>
 
-  		<p>Instructions are as follows:</p>
+			<p>Instructions are as follows:</p>
 
-  		<ol>
-  			<li>A set of RGB values will be displayed.</li>
-  			<li>Six different colours will be displayed.</li>
-  			<li>You must guess which of the 6 colours matches the given RGB value.</li>
-  		</ol>
-  	</div>
+			<ol>
+				<li>A set of RGB values will be displayed.</li>
+				<li>Six different colours will be displayed.</li>
+				<li>You must guess which of the 6 colours matches the given RGB value.</li>
+			</ol>
+		</div>
 
-    <div class="gameTextBox rgbValue">
-    	<h4>The rgb value of the correct button is:</h4>
-    	<h4 id="colourValue"></h4>
-    </div>
+		<div class="gameTextBox rgbValue">
+			<h4>The rgb value of the correct button is:</h4>
+			<h4 id="colourValue"></h4>
+		</div>
 
-    <h2 id="answerMessage"></h2>
+		<h2 id="answerMessage"></h2>
 
-      <div class="buttonWrapper">
-          <button class="colourButton"></button>
-          <button class="colourButton"></button>
-          <button class="colourButton"></button>
-          <button class="colourButton"></button>
-          <button class="colourButton"></button>
-          <button class="colourButton"></button>
-      </div>
+		  <div class="buttonWrapper">
+			  <button class="colourButton"></button>
+			  <button class="colourButton"></button>
+			  <button class="colourButton"></button>
+			  <button class="colourButton"></button>
+			  <button class="colourButton"></button>
+			  <button class="colourButton"></button>
+		  </div>
 
-      <div id="reset"><button id="resetButton">Reset game</button></div>
+		  <div id="reset"><button id="resetButton">Reset game</button></div>
 
-  	 <a class="homepage-link" href="index.html">Home</a>
+		 <a class="homepage-link" href="index.html">Home</a>
 
-  	 <footer>Adapted from <a style="font-size:inherit;" href="https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi" target="_blank">https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi</a></footer>
-  </div>
-	<script src="js/GuessTheColourGameScript.js"></script>
-</body>
+		 <footer>Adapted from <a style="font-size:inherit;" href="https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi" target="_blank">https://projects.raspberrypi.org/en/projects/cd-beginner-javascript-sushi</a></footer>
+	  </div>
+		<script src="js/GuessTheColourGameScript.js"></script>
+	</body>
+</html>
