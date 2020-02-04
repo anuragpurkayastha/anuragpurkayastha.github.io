@@ -113,10 +113,11 @@ h1 {
   display: flex;
   flex:1;
   flex-direction: column;
-  border: 2px solid black;
+  border: 2px solid #7d7e80;
   border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
+  background: #c3c5c9;
 }
 
 .project-section p {
@@ -322,7 +323,7 @@ input[type="submit"]{
 }
 
 .guessTheColourBody {
-  background: url(https://pixabay.com/get/53e5d3424a56b108feda8460825668204022dfe05b51774a71277dd2/question-556104_1920.jpg) bottom center;
+  background: url("guessTheColourImage_homepage.jpg") bottom center;
   background-size: contain;
   background-color: lightgrey;
 }
