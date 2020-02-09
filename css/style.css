@@ -532,11 +532,11 @@ kbd {
 	grid-template-rows: repeat(6,100px);
 	grid-template-areas:
 		"display	display		display		display"
-		"keyPlus	keyMinus	keyMultiply	keyDivide"
-		"key7		key8		key9		keyEquals"
-		"key4		key5		key6		keyEquals"
-		"key1		key2		key3		keyEquals"
-		"key0		keyDecimal	keyClear	keyEquals";
+		".	.	.	."
+		".	.	.	keyEquals"
+		".	.	.	keyEquals"
+		".	.	.	keyEquals"
+		".	keyDecimal	keyClear	keyEquals";
 	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
@@ -545,22 +545,23 @@ kbd {
 .calculatorDisplay	{
 	grid-area: display;
 	background: black;
+	color: white;
+	text-align: right;
+	padding-top: 15px;
 }
 
 .calculatorKey	{
 	text-align: center;
-	background: blue;
-	border: 1px solid black;
+	background: #403f3e;
+	color: white;
+	border: 1px solid white;
+	font-size: 3rem;
+	margin: auto auto;
+	height: 100%;
+	width: 100%;
 }
 
-.plusKey	{
-	grid-area: keyPlus;
-}
-
-.minusKey	{
-	grid-area: keyMinus;
-}
-
-.divideKey	{
+.equalsKey	{
 	grid-area: keyEquals;
+	background: #e0790b;
 }
