@@ -1,10 +1,18 @@
 /*-----------------------------------------------------------
 	Script to implement the Javascript Calculator
 -----------------------------------------------------------*/
-window.addEventListener('keydown',function(e){
-	const keyPressed = document.querySelector(`kbd[data-key="${e.keyCode}"]`);
-	
-	console.log(keyPressed.innerHTML);
-	
-	document.getElementById("answerDisplay").innerHTML = keyPressed.innerHTML;
-});
+
+/*----------------------------------------------------
+	ADD AN EVENT LISTENER FOR EACH OF THE KEYS
+-----------------------------------------------------*/
+
+// First select all the keys and store in a variable.
+const calculatorKeys = document.querySelectorAll(".calculatorKey");
+
+//DEBUG - display all the selected keys
+console.log(calculatorKeys);
+
+//Add an event listener to each of the keys
+calculatorKeys.forEach(key => key.addEventListener("click",function(e){
+	console.log(e.target.keyValue);
+}));
