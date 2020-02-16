@@ -47,7 +47,7 @@ h1 {
   text-align: center;
   text-decoration: none;
   padding-top: 0px;
-  margin-bottom: 20px;
+  margin: 0px auto 10px auto;
 }
 
 .homepage-link {
@@ -62,31 +62,46 @@ h1 {
   display: flex;
   flex-direction: column;
   flex: 1;
-  justify-content: center;
+  justify-content: flex-start;
   align-content: center;
   background-color: #3b3636;
   min-height: 100vh;
 }
 
+.box {
+  font-size: 1.6rem;
+  color: white;
+  line-height: 1em;
+  width: 90%;
+  margin:10px auto;
+}
+
 #welcomeSectionHeader {
   color: #E3E1DA;
-  margin: 0px;
+  margin-bottom: 20px;
   text-decoration: none;
 }
 
-#about-me-box {
-  font-size: 1.4em;
-  color: white;
-  line-height: 1em;
-  border: 1rem double white;
-  border-radius: 10px;
-  width: 80%;
-  margin: 5rem auto 5rem auto;
+.box p,h2 {
+    margin: 10px auto;
+	text-align: left;
 }
 
-#about-me-box p {
-	margin: 20px 10px;
-	text-align: left;
+.box h2 {
+    padding-bottom: 15px;
+    border-bottom: 1px solid white;
+}
+
+.project-list   {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.project-list ul    {
+    margin: 0;
 }
 /*================================================*/
 /*	Projects section*/
@@ -485,7 +500,7 @@ kbd {
 .hand {
 	width: 50%;
 	height: 6px;
-  background: black;
+    background: black;
 	position: absolute;
 	top: 50%;
 	transform-origin: 100%;
@@ -500,7 +515,7 @@ kbd {
   transform: translateY(-1px);
 }
 
-.min-hand {
+.hour-hand {
   width: 30%;
   left: 20%;
 }
