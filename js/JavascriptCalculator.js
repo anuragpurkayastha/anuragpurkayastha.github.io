@@ -1,15 +1,15 @@
-/*-----------------------------------------------------------
+ /*-----------------------------------------------------------
 	Script to implement the Javascript Calculator
 -----------------------------------------------------------*/
 // Variables
-const calculatorKeys = document.querySelectorAll(".calculatorKey");	//All the keys and store in a variable.
-const display = document.getElementById("answerDisplay");	// Display of the calculator
-let currentNumberDigits = [];	//Array which stores the digits of the current number being pressed into the calculator.
-let currentNumber;	//Number representation of the number being typed in.
-let result = 0;	//Variable to store the result of the calculation.
-let decimalPressed = false;	//Boolean value to check if the decimal button has been pressed. Ensures decimal pressed only once.
-let numberToDisplay;	//Number to display on the calculator
-let operation;	// Operation to perform (add, minus, divide or multiply)
+const calculatorKeys = document.querySelectorAll(".calculatorKey");		//All the keys and store in a variable.
+const display = document.getElementById("answerDisplay");				//Display of the calculator
+let currentNumberDigits = [];											//Array which stores the digits of the current number being pressed into the calculator.
+let currentNumber;														//Number representation of the number being typed in.
+let result = 0;															//Variable to store the result of the calculation.
+let decimalPressed = false;												//Boolean value to check if the decimal button has been pressed. Ensures decimal pressed only once.
+let numberToDisplay;													//Number to display on the calculator
+let operation;															// Operation to perform (add, minus, divide or multiply)
 
 /*----------------------------------------------------
 	FUNCTIONS
@@ -72,6 +72,7 @@ function calculator(e)	{
 			result = 1;
 			break;
 		case "equals":
+			operation = "equals";
 			display.innerHTML += "=";
 			break;
 		default:
@@ -80,23 +81,33 @@ function calculator(e)	{
 
 	//Convert the typed number to a float.
 	currentNumber = parseFloat(currentNumberDigits.join(""));
+	display.innerHTML = currentNumberDigits.join("");
 
 	switch(operation){
 		case "multiplication":
 			result = result * currentNumber;
-			currentNumberDigits = [];
 			break;
 		case "addition":
 			result += currentNumber;
-			currentNumberDigits = [];
+			break;
+		case "subtraction":
+			result -= currentNumber;
+			break;
+		case "equals":
+			display.innerHTML = result;
 			break;
 		default:
 			break;
 	}
+	
+	if(operation != null){
+		currentNumberDigits = [];
+	}
 
 	console.log("Current digits typed in: " + currentNumberDigits);
-	console.log("Number to display on calculator: " + numberToDisplay);
+	console.log("Number to display on calculator: " + currentNumber);
 	console.log(result);
+	console.log("Operation: "+operation);
 
 }
 
