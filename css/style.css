@@ -53,6 +53,7 @@ h1 {
 .homepage-link {
 	font-size: 1.7rem;
 	font-style: normal;
+	margin-bottom: 10px;
 }
 
 /*================================================*/
@@ -544,7 +545,7 @@ kbd {
 .calculator	{
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: repeat(6,100px);
+	grid-template-rows: repeat(6,90px);
 	grid-template-areas:
 		"display	display		display		display"
 		".	.	.	."
@@ -552,9 +553,10 @@ kbd {
 		".	.	.	keyEquals"
 		".	.	.	keyEquals"
 		".	keyDecimal	keyClear	keyEquals";
-	width: 80%;
+	width: 60%;
 	margin-left: auto;
 	margin-right: auto;
+	margin-top: 20px;
 }
 
 .calculatorDisplay	{
