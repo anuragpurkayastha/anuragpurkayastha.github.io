@@ -106,7 +106,7 @@ function calculator(e)	{
 
 	console.log("Current digits typed in: " + currentNumberDigits);
 	console.log("Number to display on calculator: " + currentNumber);
-	console.log(result);
+	console.log("Running result: "+result);
 	console.log("Operation: "+operation);
 
 }
