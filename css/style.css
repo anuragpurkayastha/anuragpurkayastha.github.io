@@ -15,7 +15,6 @@ html {
 }
 
 body {
-  margin: 0;
   font-family: 'Open Sans';
   background-color: #dce0e6;
   color: #1c1c1b;
@@ -46,7 +45,6 @@ h1 {
   font-size: 400%;
   text-align: center;
   text-decoration: none;
-  padding-top: 56px;
   margin: 0px auto 10px auto;
 }
 
@@ -62,7 +60,7 @@ nav	{
 }
 
 nav a:hover	{
-	background-color: red;
+	background-color: #c8cbcf;
 }
 /*================================================*/
 /*	Welcome section*/
@@ -130,9 +128,6 @@ nav a:hover	{
 }
 
 .project-section {
-  display: flex;
-  flex:1;
-  flex-direction: column;
   border: 2px solid #7d7e80;
   border-radius: 10px;
   padding-left: 10px;
@@ -151,13 +146,12 @@ nav a:hover	{
 	font-weight: 400;
 	font-size: 2rem;
 	text-align: left;
-  margin: 0.3rem auto 0.5rem 0.5rem;
+	margin: 0.3rem auto 0.5rem 0.5rem;
 }
 
 .project-section img{
-	max-width: 40%;
-	max-height: 40%;
-	margin: 0px auto 10px auto;
+	max-width: 60%;
+	max-height: 60%;
 }
 
 .project-link {
