@@ -113,18 +113,34 @@ nav a:hover	{
 /*================================================*/
 /*	Projects section*/
 /*================================================*/
-.projects p {
-  font-size: 1.6rem;
-}
 
 .projects-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-  margin-left: 10px;
-  margin-right: 10px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 20px;
+  grid-row-gap: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
   margin-bottom: 10px;
+}
+
+.card   {
+    transition: transform 0.2s;
+}
+
+.card:hover     {
+    border: 2px solid yellow;
+    box-shadow: 5px 5px 10px black;
+}
+
+.card-img-top   {
+    height: 260px;
+}
+
+.card-title {
+    text-align: left;
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 .project-section {
@@ -138,7 +154,7 @@ nav a:hover	{
 .project-section p {
 	text-align:left;
 	font-style: normal;
-	font-size: 100%;
+	font-size: 16pt;
 }
 
 .project-section h3{
@@ -476,9 +492,9 @@ kbd {
 /*                          Javascript clock                                   */
 /*=============================================================================*/
 .clock {
-	width: 20rem;
-	height: 20rem;
-	border: 1rem solid white;
+	width: 210px;
+	height: 210px;
+	border: 0.5rem solid white;
 	border-radius: 50%;
 	margin: 20px auto;
 	position: relative;
