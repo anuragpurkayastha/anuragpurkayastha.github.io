@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en"">
   <head>
     <meta charset="utf-8">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
@@ -13,20 +13,20 @@
   </head>
   <body>
 
-	<!--NAV BAR-->
-	<nav class = "d-flex navbar navbar-expand-sm bg-light navbar-light">
+	<!-- NAV BAR -->
+	<nav class = "d-flex navbar navbar-expand-sm bg-light navbar-light sticky-top">
 		<ul class="navbar-nav">
-			<li class = "nav-item active">
-				<a class="nav-link" href="#">About Me</a>
-			</li>
 			<li class = "nav-item dropdown active">
 				<a class="nav-link dropdown-toggle mr-auto" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Projects</a>
-				<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-				<a class="dropdown-item" href="project1_tributepage.html">Tribute Page</a>
-				<a class="dropdown-item" href="#">Another action</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item text-decoration-none" href="project1_tributepage.html">Tribute Page</a>
+					<a class="dropdown-item text-decoration-none" href="project2_surveyform.html">Survey Form</a>
+					<a class="dropdown-item text-decoration-none" href="GuessTheColourGame.html">Guess The Colour Game</a>
+					<a class="dropdown-item text-decoration-none" href="Javascript-Drumkit.html">Javascript Drumkit</a>
+					<a class="dropdown-item text-decoration-none" href="#javascript-clock">Javascript Clock</a>
+					<a class="dropdown-item text-decoration-none" href="JavascriptCalculator.html">Javascript Calculator</a>
 				</div>
 			</li>
-        </a>
 		</ul>
 	</nav>
 
@@ -36,7 +36,7 @@
 
 		<div class= "d-flex flex-column justify-content-center align-items-center">
 			<div class="box">
-				<h2>About Me</h2>
+				<h2 id="about-me">About Me</h2>
 				<p>I am a university student currently studying IT. This website was made as a personal hobby to learn about web design and development.</p>
 				<p>On this page you will find some <a href="#projects">projects</a>  that I am currently working on using tutorials I found on the web.</p>
 			</div>
@@ -45,9 +45,9 @@
 
     <!--PROJECTS SECTION -->
     <div class="projects" id="projects">
-        <h1>Projects</h1>
+        <h1 class="pt-5">Projects</h1>
 
-        <p>These are some of the projects I have been working on.</p>
+        <p class="section-description-text">These are some of the projects I have been working on.</p>
 
 
         <!-- PROJECT TILES -->
@@ -96,7 +96,7 @@
       		</div>
 
     		<!--Javascript clock -->
-    		<div class = "card text-left">
+    		<div id="javascript-clock" class = "card text-left">
                 <div class="clock">
     				<div class="clock-face">
     					<div class="hand hour-hand"></div>
@@ -128,5 +128,6 @@
     </div>
 
 	<script src="js/JavascriptClock.js"></script>
+		
   </body>
 </html>

@@ -63,6 +63,16 @@ nav	{
 nav a:hover	{
 	background-color: #c8cbcf;
 }
+
+.section-description-text 	{
+	font-size: 20pt;
+	font-style: italic;
+}
+
+.dropdown-item 	{
+	line-height: 2;
+}
+
 /*================================================*/
 /*	Welcome section*/
 /*================================================*/
@@ -231,26 +241,12 @@ blockquote p {
   align-items: center;
 }
 
-#survey-title{
-	font-size: 50px;
-	margin-bottom: 10px;
-	font-weight: 200;
-}
-
 #formArea {
   background-color: #c8cefa;
-  display: flex;
-  flex-direction: column;
   margin: 20px auto 10px; auto;
   width: 900px;
   padding: 20px 10px 10px 10px;
   border-radius: 10px;
-}
-
-#survey-description{
-  text-align: center;
-  font-style:italic;
-  font-size: 24px;
 }
 
 #survey-form {
