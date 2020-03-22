@@ -1,8 +1,5 @@
 <!-- header -->
-<?php 
-	$pagename = 'home';
-	include "header.php";
-?>
+<?php include "header.inc";?>
 <!-- end header -->
 
     <!-- WELCOME SECTION -->
@@ -14,6 +11,7 @@
 				<h2 id="about-me">About Me</h2>
 				<p>I am a university student currently studying IT. This website was made as a personal hobby to learn about web design and development.</p>
 				<p>On this page you will find some <a href="#projects">projects</a>  that I am currently working on using tutorials I found on the web.</p>
+				<p>TESTING: The current working directory is:</p>
 			</div>
 		</div>
     </div>
