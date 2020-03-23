@@ -1,14 +1,18 @@
 <!-- header -->
 <?php 
 	$pagename = 'home';
+	$page_title = 'Home';
 	include "includes/header.php";
 ?>
 <!-- end header -->
+
+<!--	START PAGE CONTENT	-->
 		
 	<!--	NAV MENU	-->
 	<?php
 		include "includes/navigationMenu.php";
 	?>
+	<!--	End Nav menu	-->
 		
     <!-- WELCOME SECTION -->
     <div class="welcome-section d-flex flex-column justify-content-center">
@@ -106,8 +110,12 @@
     		</div>
         </div>
     </div>
-
-	<script src="js/JavascriptClock.js"></script>
 		
-  </body>
-</html>
+	<script src="js/JavascriptClock.js"></script>
+<!--	END PAGE CONTENT	-->
+
+<!--	FOOTER	-->
+<?php
+	include("./includes/footer.php");
+?>
+<!--	END FOOTER	-->

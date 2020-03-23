@@ -35,11 +35,16 @@ blockquote {
 	max-width: 700px;
 }
 
-footer {
-	margin: 30px auto 20px auto;
-	font-size: 70%;
-	text-align: center;
-	font-style: italic;
+footer	{
+	margin-top: 30px;
+	color: white;
+	background-color: #364c66;
+	text-align: left;
+	padding: 7px 20px;
+}
+
+footer p 	{
+	margin: 0;
 }
 
 h1 {
@@ -318,21 +323,11 @@ input[type="submit"]{
 /*                          GUESS THE COLOUR GAME                              */
 /*=============================================================================*/
 .game-container {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgba(12, 13, 12,0.98);
-  align-items: center;
+  background-color: rgba(12, 13, 12,0.9);
   color: white;
-}
-
-.guessTheColourBody {
-  background: url("guessTheColourImage_homepage.jpg") bottom center;
-  background-size: contain;
-  background-color: lightgrey;
 }
 
 .colourButton{
@@ -381,8 +376,8 @@ input[type="submit"]{
 	width: 80%;
 	padding-left: 10px;
 	text-align: left;
-  font-size: 1.4rem;
-  color: white;
+	font-size: 1.4rem;
+	color: white;
 }
 
 .rgbValue {
@@ -399,6 +394,8 @@ ol li{
 .drumkitBody {
 	background-image: url("drumkit.jpg");
 	background-size: cover;
+	margin: 0;
+	min-height: 91vh;
 }
 
 #drumkit-heading {
@@ -420,14 +417,6 @@ ol li{
 	margin: 0;
 }
 
-.keys {
-  display: flex;
-  flex: 1;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 100px;
-}
-
 .key {
   border: .4rem solid black;
   border-radius: .5rem;
@@ -438,7 +427,7 @@ ol li{
   width: 10rem;
   text-align: center;
   color: white;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.5);
   text-shadow: 0 0 .5rem black;
 }
 
@@ -451,6 +440,7 @@ ol li{
 kbd {
   display: block;
   font-size: 4rem;
+  background: rgba(0,0,0,0.6);
 }
 
 .sound {
@@ -458,11 +448,7 @@ kbd {
   text-transform: uppercase;
   letter-spacing: .1rem;
   color: #ffc600;
-}
-
-.drumkit-go-homeLink	{
-	color: white;
-	font-size: 2.5rem;
+  font-weight: bold;
 }
 
 /*=============================================================================*/

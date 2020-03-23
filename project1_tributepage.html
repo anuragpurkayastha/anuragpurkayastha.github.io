@@ -1,10 +1,12 @@
 <!--	Header	-->
 <?php
 	$pagename = 'tribute_page';
+	$page_title = 'Tribute Page';
 	include "includes/header.php";
 ?>
 <!--	End header	-->
 
+<!--	START PAGE CONTENT	-->
 	<!--	Navigation Menu	-->
 	<?php
 		include "includes/navigationMenu.php";
@@ -59,18 +61,19 @@
 				  <li><strong>2009</strong> - dies at the age of 95.</li>
 
 				</ul>
-		</div>
+				
+				<blockquote>
+					<p>"Borlaug's life and achievement are testimony to the far-reaching contribution that one man's towering intellect, persistence and scientific vision can make to human peace and progress."</p>
 
-		<blockquote>
-			<p>"Borlaug's life and achievement are testimony to the far-reaching contribution that one man's towering intellect, persistence and scientific vision can make to human peace and progress."</p>
+					<cite>--Indian Prime Minister Manmohan Singh</cite>
+				</blockquote>
 
-			<cite>--Indian Prime Minister Manmohan Singh</cite>
-		</blockquote>
-
-		<p>If you would like to know more about this person, please visit his <a href="https://en.wikipedia.org/wiki/Norman_Borlaug" target="_blank">Wikipedia</a> page.</p>
+			<p>If you would like to know more about this person, please visit his <a href="https://en.wikipedia.org/wiki/Norman_Borlaug" target="_blank">Wikipedia</a> page.</p>
 	</div>
-	<!-- Footer -->
-	<footer>Website adapted from <a href="https://codepen.io/freeCodeCamp/full/zNqgVx" target="_blank">FreeCodeCamp.org</footer>
-  </body>
+<!--	END PAGE CONTENT	-->
 
-</html>
+<!--	FOOTER	-->
+<?php
+	include("includes/footer.php");
+?>
+<!--	END FOOTER 	-->
