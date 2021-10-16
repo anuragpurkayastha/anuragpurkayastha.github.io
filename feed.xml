@@ -1,4 +1,190 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2021-10-08T23:03:03+11:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">My Tech Blog</title><subtitle>A whole heap of tech talk</subtitle><author><name>Anurag Purkayastha</name></author><entry><title type="html">Welcome to my tech blog!</title><link href="http://localhost:4000/welcome-to-my-blog/" rel="alternate" type="text/html" title="Welcome to my tech blog!" /><published>2021-10-08T21:56:59+11:00</published><updated>2021-10-08T21:56:59+11:00</updated><id>http://localhost:4000/welcome-to-my-blog</id><content type="html" xml:base="http://localhost:4000/welcome-to-my-blog/">&lt;p&gt;This is my blog which will be about a whole heap of tech stuff! From linux to programming to web development to networking!&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-16T17:38:32+11:00</updated><id>/feed.xml</id><title type="html">My Tech Blog</title><subtitle>A whole heap of tech talk</subtitle><author><name>Anurag Purkayastha</name></author><entry><title type="html">Designing An App - Part 1</title><link href="/Designing-An-App-Part-1/" rel="alternate" type="text/html" title="Designing An App - Part 1" /><published>2021-10-11T00:00:00+11:00</published><updated>2021-10-11T00:00:00+11:00</updated><id>/Designing-An-App-Part-1</id><content type="html" xml:base="/Designing-An-App-Part-1/">&lt;p&gt;&lt;img src=&quot;../assets/monopoly.jpg&quot; alt=&quot;Image of monopoly board&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Recently I had to complete a week long coding test for a job application I
+submitted. Fortunately, the company found my submission of acceptable quality
+and I made it through to the next round.&lt;/p&gt;
+
+&lt;p&gt;This post is about the design process I undertook to program the application.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-game&quot;&gt;The Game&lt;/h2&gt;
+
+&lt;p&gt;The game was a customised version of the popular game, Monopoly. The rules of the game are as follows.&lt;/p&gt;
+
+&lt;p&gt;There are four players who take turns in the following order:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Peter&lt;/li&gt;
+  &lt;li&gt;Billy&lt;/li&gt;
+  &lt;li&gt;Charlotte&lt;/li&gt;
+  &lt;li&gt;Sweedal&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Each player starts with $16.&lt;/li&gt;
+  &lt;li&gt;Everybody starts on GO&lt;/li&gt;
+  &lt;li&gt;You get $1 when you pass GO (this excludes your starting move)&lt;/li&gt;
+  &lt;li&gt;If you land on a property, you must buy it&lt;/li&gt;
+  &lt;li&gt;If you land on an owned property, you must pay rent to the owner&lt;/li&gt;
+  &lt;li&gt;If the same owner owns all property of the same colour, the rent is doubled&lt;/li&gt;
+  &lt;li&gt;Once someone is bankrupt, whoever has the most money remaining is the winner&lt;/li&gt;
+  &lt;li&gt;There are no chance cards, jail or stations&lt;/li&gt;
+  &lt;li&gt;The board wraps around (i.e. you get to the last space, the next space is the first space)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The squares of the board were provided as a JSON file named &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;board.json&lt;/code&gt;. This file was to be read in to the program. Another important implementation note is that the game was &lt;strong&gt;deterministic&lt;/strong&gt;, meaning that there were set moves for each player which were also to be read in to the program.&lt;/p&gt;
+
+&lt;h2 id=&quot;task&quot;&gt;Task&lt;/h2&gt;
+
+&lt;p&gt;The task I was given to complete was to design a program that simulates the gameplay given the moves and board and determine the winner of each game.&lt;/p&gt;
+
+&lt;p&gt;In addition the following were also required:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;How much money does everybody finish with?&lt;/li&gt;
+  &lt;li&gt;What locations does everybody finish on?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;application-design&quot;&gt;Application Design&lt;/h2&gt;
+
+&lt;p&gt;When I first started programming in my life, I would be very inclined to start coding something straight away without any planning (or more accurately, I would plan as I was writing the code).&lt;/p&gt;
+
+&lt;p&gt;However, with more experience I have come to understand that planning the approach before typing any code makes things a whole lot easier. So, this is exactly what I did to tackle this test.&lt;/p&gt;
+
+&lt;h3 id=&quot;object-oriented-progamming&quot;&gt;Object Oriented Progamming&lt;/h3&gt;
+
+&lt;p&gt;This application was a perfect opportunity for object oriented programming because there are different &lt;strong&gt;objects&lt;/strong&gt; that could be implemented.&lt;/p&gt;
+
+&lt;p&gt;Thinking about the game, what objects can there be? Well, there are &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Players&lt;/code&gt; who earn money from rent, spend money to buy property or paying rent. There are also &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Square&lt;/code&gt; objects that represent each square on the board (GO, property etc). Finally, a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Game&lt;/code&gt; object can be used to create a game of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Players&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Squares&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Summarising, the main objects are as follows:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Players&lt;/li&gt;
+  &lt;li&gt;Squares (of the board)&lt;/li&gt;
+  &lt;li&gt;Game - the main object which creates a game with a board of squares and players.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;players&quot;&gt;Players&lt;/h4&gt;
+
+&lt;p&gt;In a game of monopoly, each player has a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;name&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;money&lt;/code&gt; that they spend on
+buying property and paying rent. The amount of money also determines the winner
+of the game. For the purpose of designing a simulation, a Player can also keep track of its own &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;position&lt;/code&gt; on the board.&lt;/p&gt;
+
+&lt;p&gt;So, the attributes that a Player of the game has are:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Name&lt;/li&gt;
+  &lt;li&gt;Total amount of money&lt;/li&gt;
+  &lt;li&gt;Current position on the board&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These can be the &lt;em&gt;fields&lt;/em&gt; of a Player object.&lt;/p&gt;
+
+&lt;p&gt;What can a player do? Well, they can:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Spend money - for rent or buying property&lt;/li&gt;
+  &lt;li&gt;Earn money - from rent or passing GO&lt;/li&gt;
+  &lt;li&gt;Check if they are bankrupt - in which case the game ends if any player goes bankrupt&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These can be the &lt;em&gt;methods&lt;/em&gt; of a Player object.&lt;/p&gt;
+
+&lt;h4 id=&quot;squares&quot;&gt;Squares&lt;/h4&gt;
+
+&lt;p&gt;A real monopoly game board is made up of board &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Squares&lt;/code&gt;, with each square
+containing a property (that can be bought or rented) or GO. So, extracting from 
+reality, we can design a board of the simulation to be made up of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Square&lt;/code&gt;
+objects with similar properties. That is, each Square can be a property that can
+be bought (owned) and rented.&lt;/p&gt;
+
+&lt;p&gt;So each Square has the following attributes:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Name (Property name)&lt;/li&gt;
+  &lt;li&gt;Price&lt;/li&gt;
+  &lt;li&gt;Colour&lt;/li&gt;
+  &lt;li&gt;Type (“property” or “go”)&lt;/li&gt;
+  &lt;li&gt;Owner (when bought)&lt;/li&gt;
+  &lt;li&gt;Rent (when bought).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;A &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Square&lt;/code&gt; has the following abilties:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Being bought&lt;/li&gt;
+  &lt;li&gt;Double the rent (when a player owns all the properties of the same colour)&lt;/li&gt;
+  &lt;li&gt;Check if the property is owned.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;game&quot;&gt;Game&lt;/h4&gt;
+
+&lt;p&gt;So now we have &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Players&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Squares&lt;/code&gt;. We can implement a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Game&lt;/code&gt; object that
+initialises and runs a “game” in the simulation. For example, a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Game&lt;/code&gt; can
+create the squares and players and implmement the gameplay logic.&lt;/p&gt;
+
+&lt;p&gt;Using these ideas, a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Game&lt;/code&gt; object can have the following abilities:&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Check if any player is bankrupt&lt;/li&gt;
+  &lt;li&gt;Announce the winning player and the final results when game ends.&lt;/li&gt;
+  &lt;li&gt;Keep track of the current player.&lt;/li&gt;
+  &lt;li&gt;Move the current player the predetermined amount of moves.&lt;/li&gt;
+  &lt;li&gt;Check if any player owns all properties of one particular colour and double
+the rent of all corresponding properties.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4 id=&quot;gameplay-logic&quot;&gt;Gameplay Logic&lt;/h4&gt;
+
+&lt;p&gt;Now that the application objects have been designed, we can start thinking about
+the actual logic of the gameplay. That is, we can think about a high level idea
+of how a game is played. The algorithm that I used is as follows.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check if any player is bankrupt or if there are no more moves left to play.
+    a. If any condition is met, then announce the final results.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Get the current Player whose turn it is.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Get the amount of moves, &lt;em&gt;x&lt;/em&gt;, that the current Player should move.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Move the Player &lt;em&gt;x&lt;/em&gt; moves away from the Player’s current position on the
+board.
+    a. If the destination square that is &lt;em&gt;x&lt;/em&gt; moves away from the Player’s
+    current position is beyond the total number of squares, then wrap around.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Check if the square the Player has landed on is owned.
+    a. If it is, then pay rent to the owner.
+    b. If it is not, then Player buys the property. The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;owner&lt;/code&gt; attribute of the
+    square will be updated to be the Player.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Go to step 1.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The steps above are essentially the steps for one turn for a Player. We can
+implement these steps for each Player.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;In this post we have covered the design of the application by designing game
+objects which creates some modularity. This helps to build, debug, test and
+extend the application. We have also gone over the game play logic by thinking
+about the steps that a turn for a Player will take.&lt;/p&gt;
+
+&lt;p&gt;This post is about the game simulation, but it also covers thinking about
+programs using Object Oriented Programming design. It shows how breaking up a
+seemingly complex program can simplify the implementation and maintenance of the
+application by breaking the program down into smaller parts.&lt;/p&gt;
+
+&lt;p&gt;In Part 2, I’ll briefly go over some technical details of the implementation
+which will essentially be an outline of the files and unit test.&lt;/p&gt;</content><author><name>Anurag Purkayastha</name></author><summary type="html"></summary></entry><entry><title type="html">Welcome to my tech blog!</title><link href="/welcome-to-my-blog/" rel="alternate" type="text/html" title="Welcome to my tech blog!" /><published>2021-10-08T00:00:00+11:00</published><updated>2021-10-08T00:00:00+11:00</updated><id>/welcome-to-my-blog</id><content type="html" xml:base="/welcome-to-my-blog/">&lt;p&gt;This is my blog which will be about a whole heap of tech stuff! From linux to programming to web development to networking!&lt;/p&gt;
 
 &lt;p&gt;I will be adding posts to this blog as time allows because I am also working ;).&lt;/p&gt;
 
