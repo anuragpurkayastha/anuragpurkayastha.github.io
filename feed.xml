@@ -1,6 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-16T17:38:32+11:00</updated><id>/feed.xml</id><title type="html">My Tech Blog</title><subtitle>A whole heap of tech talk</subtitle><author><name>Anurag Purkayastha</name></author><entry><title type="html">Designing An App - Part 1</title><link href="/Designing-An-App-Part-1/" rel="alternate" type="text/html" title="Designing An App - Part 1" /><published>2021-10-11T00:00:00+11:00</published><updated>2021-10-11T00:00:00+11:00</updated><id>/Designing-An-App-Part-1</id><content type="html" xml:base="/Designing-An-App-Part-1/">&lt;p&gt;&lt;img src=&quot;../assets/monopoly.jpg&quot; alt=&quot;Image of monopoly board&quot; /&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="4.2.1">Jekyll</generator><link href="/feed.xml" rel="self" type="application/atom+xml" /><link href="/" rel="alternate" type="text/html" /><updated>2021-10-19T17:47:14+11:00</updated><id>/feed.xml</id><title type="html">My Tech Blog</title><subtitle>A whole heap of tech talk</subtitle><author><name>Anurag Purkayastha</name></author><entry><title type="html">Objects and the Assignment Operator</title><link href="/Objects-and-the-Assignment-Operator/" rel="alternate" type="text/html" title="Objects and the Assignment Operator" /><published>2021-10-16T00:00:00+11:00</published><updated>2021-10-16T00:00:00+11:00</updated><id>/Objects-and-the-Assignment-Operator</id><content type="html" xml:base="/Objects-and-the-Assignment-Operator/">&lt;p&gt;A common, yet subtle, bug that I sometimes come across in my programs has to do with objects and the assignment operator.&lt;/p&gt;
 
-&lt;p&gt;Recently I had to complete a week long coding test for a job application I
+&lt;p&gt;To give an example, let’s say we have the following code&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Car car1 = new Car(&apos;Subaru&apos;, 100000); // Car constructor Car(String model, int km_travelled)
+Car a;
+a = car1;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Naively, you’d think that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;car1&lt;/code&gt; are independent &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Car&lt;/code&gt; objects. Now let’s say we want to add some more kilometres to Car &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;a.increaseKm(1000);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;What we’d expect is that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt; would now have a new kilometres value of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;101000&lt;/code&gt; km. But if we check the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;km_travelled&lt;/code&gt; field of each we get something different.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;System.out.println(&quot;Km Travelled &apos;a&apos;: &quot; + a.getKmTravelled()); // &quot;Km Travelled &apos;a&apos;: 101000&quot;);
+System.out.println(&quot;Km Travelled &apos;car1&apos;: &quot; + b.getKmTravelled()); // &quot;Km Travelled &apos;car1&apos;: 101000&quot;);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;km_travelled&lt;/code&gt; field of Car &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;car1&lt;/code&gt; has also been increased! But we declared what we thought were “independent” variables &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;car1&lt;/code&gt; to hold different &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Car&lt;/code&gt; objects. The answer to this is that &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;a&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;car1&lt;/code&gt; are referring to the &lt;strong&gt;same&lt;/strong&gt; object.&lt;/p&gt;
+
+&lt;p&gt;This is a subtle bug that can be difficult to find if the concept of &lt;em&gt;objects&lt;/em&gt; aren’t fully understood.&lt;/p&gt;
+
+&lt;p&gt;This post aims to clear up this misconception.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-assignment-operator&quot;&gt;The Assignment Operator&lt;/h2&gt;
+
+&lt;h3 id=&quot;variables&quot;&gt;Variables&lt;/h3&gt;
+
+&lt;p&gt;In any strongly typed language such as Java or C++, when a variable of a particular type is declared, space in memory is set aside to hold a thing of that type.&lt;/p&gt;
+
+&lt;p&gt;For example, the declarations&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;int x;
+double y;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;will reserve 4 bytes for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; and 8 bytes for &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt;. We can think of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt; as being &lt;em&gt;boxes&lt;/em&gt; that hold a thing of the reserved size.&lt;/p&gt;
+
+&lt;p&gt;When we later &lt;em&gt;assign&lt;/em&gt; values to each variable, the bit representation of those values are &lt;strong&gt;copied&lt;/strong&gt; into the memory locations of &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt;. That is, the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;x&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;y&lt;/code&gt; “boxes” hold the binary representation of the values assigned to each
+variable.&lt;/p&gt;
+
+&lt;p&gt;However, this is only true for &lt;strong&gt;primitive&lt;/strong&gt; values such as Strings, ints and doubles. Things work a little differently for &lt;em&gt;objects&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;objects&quot;&gt;Objects&lt;/h2&gt;
+
+&lt;p&gt;Objects are often implemented in programs to represent &lt;strong&gt;user-defined types&lt;/strong&gt;. For example, a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Car&lt;/code&gt; object mentioned earlier. In our example, a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Car&lt;/code&gt; object can have custom fields and methods related to cars.&lt;/p&gt;
+
+&lt;p&gt;When we create a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Car&lt;/code&gt; object using the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new&lt;/code&gt; command, space is reserved in memory to hold the object. For example,&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Car car1 = new Car(&apos;Subaru&apos;, 20000);
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;However, the variable &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;car1&lt;/code&gt; doesn’t hold the &lt;em&gt;object&lt;/em&gt; itself, instead it contains a &lt;strong&gt;reference to the object&lt;/strong&gt;. In other words, it holds the &lt;em&gt;address&lt;/em&gt; of the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Car&lt;/code&gt; object.&lt;/p&gt;
+
+&lt;p&gt;So when we assign &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;car1&lt;/code&gt; to another variable (e.g &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Car b = car1&lt;/code&gt;), we are copying the object’s address to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt;. This means that &lt;strong&gt;both&lt;/strong&gt; variables &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;car1&lt;/code&gt; and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;b&lt;/code&gt; refer to the &lt;strong&gt;same&lt;/strong&gt; object. So when a method is applied to one of the variables that modify the object’s state, the change is reflected in the other variable because both variables refer to the same object.&lt;/p&gt;
+
+&lt;p&gt;This is why assigning an object to a newly declared variable does not make it a new, independent object. If you want independent objects, you need to use the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;new&lt;/code&gt; operator to create a new object.&lt;/p&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;Primitive types that are assigned to variables result in the variables holding copies of the value (ie. the actual values themselves). An object that is assigned to a variable has its &lt;strong&gt;address&lt;/strong&gt; copied to the variable. This means assigning the object to different variables results in all of those variables referring to the same object. So when one variable changes
+the state of the object, it is reflected in the other variables.&lt;/p&gt;</content><author><name>Anurag Purkayastha</name></author><summary type="html">A common, yet subtle, bug that I sometimes come across in my programs has to do with objects and the assignment operator.</summary></entry><entry><title type="html">Designing An App - Part 1</title><link href="/Designing-An-App-Part-1/" rel="alternate" type="text/html" title="Designing An App - Part 1" /><published>2021-10-11T00:00:00+11:00</published><updated>2021-10-11T00:00:00+11:00</updated><id>/Designing-An-App-Part-1</id><content type="html" xml:base="/Designing-An-App-Part-1/">&lt;p&gt;Recently I had to complete a week long coding test for a job application I
 submitted. Fortunately, the company found my submission of acceptable quality
 and I made it through to the next round.&lt;/p&gt;
 
@@ -184,7 +245,7 @@ seemingly complex program can simplify the implementation and maintenance of the
 application by breaking the program down into smaller parts.&lt;/p&gt;
 
 &lt;p&gt;In Part 2, I’ll briefly go over some technical details of the implementation
-which will essentially be an outline of the files and unit test.&lt;/p&gt;</content><author><name>Anurag Purkayastha</name></author><summary type="html"></summary></entry><entry><title type="html">Welcome to my tech blog!</title><link href="/welcome-to-my-blog/" rel="alternate" type="text/html" title="Welcome to my tech blog!" /><published>2021-10-08T00:00:00+11:00</published><updated>2021-10-08T00:00:00+11:00</updated><id>/welcome-to-my-blog</id><content type="html" xml:base="/welcome-to-my-blog/">&lt;p&gt;This is my blog which will be about a whole heap of tech stuff! From linux to programming to web development to networking!&lt;/p&gt;
+which will essentially be an outline of the files and unit test.&lt;/p&gt;</content><author><name>Anurag Purkayastha</name></author><summary type="html">Recently I had to complete a week long coding test for a job application I submitted. Fortunately, the company found my submission of acceptable quality and I made it through to the next round.</summary></entry><entry><title type="html">Welcome to my tech blog!</title><link href="/welcome-to-my-blog/" rel="alternate" type="text/html" title="Welcome to my tech blog!" /><published>2021-10-08T00:00:00+11:00</published><updated>2021-10-08T00:00:00+11:00</updated><id>/welcome-to-my-blog</id><content type="html" xml:base="/welcome-to-my-blog/">&lt;p&gt;This is my blog which will be about a whole heap of tech stuff! From linux to programming to web development to networking!&lt;/p&gt;
 
 &lt;p&gt;I will be adding posts to this blog as time allows because I am also working ;).&lt;/p&gt;
 

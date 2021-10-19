@@ -10,4 +10,10 @@ var store = [{
         "tags": [],
         "url": "/Designing-An-App-Part-1/",
         "teaser": "/assets/monopoly.jpg"
+      },{
+        "title": "Objects and the Assignment Operator",
+        "excerpt":"A common, yet subtle, bug that I sometimes come across in my programs has to do with objects and the assignment operator. To give an example, let’s say we have the following code Car car1 = new Car('Subaru', 100000); // Car constructor Car(String model, int km_travelled) Car a; a =...","categories": [],
+        "tags": [],
+        "url": "/Objects-and-the-Assignment-Operator/",
+        "teaser": "/assets/equals_sign.png"
       }]
