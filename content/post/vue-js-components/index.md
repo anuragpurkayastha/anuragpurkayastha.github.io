@@ -17,4 +17,4 @@ Vue applications can get very complicated very fast. As the size of the applicat
 
 Vue provides a mechanism where we can break an application down into modules. These modules are contained within their own `.vue` files, known as **Single File Components (SFC)**.
 
-To be continued...
+In order to use Vue components, you will need to create a new `.vue` file and **register** it.
