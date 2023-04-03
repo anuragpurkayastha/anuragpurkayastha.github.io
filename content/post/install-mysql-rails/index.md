@@ -1,4 +1,3 @@
-
 ---
 title: Installing MySQL for Rails on Fedora 37
 description: How to install MySQL in Podman on Fedora 37
